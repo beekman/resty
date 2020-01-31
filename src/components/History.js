@@ -5,7 +5,8 @@ export default class History extends Component {
   render() {
     return (
       <aside className={ History.styles }>
-      <textarea />
+        <h2>History</h2>
+        <textarea />
       </aside>
     );
   }
