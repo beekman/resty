@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './App.css';
 import Deck from './Deck.js';
 import History from './History.js';
+
 export default class Container extends Component {
   state= {
     url:'',
@@ -13,11 +14,11 @@ export default class Container extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
-    this.setState({ historyItems: [...this.state.historyItems]});
-    makeFetch(this.state.url)
-    .then(res => {
-      this.setState({response:res});
+
+   return fetch(this.state.url)
+    .then(res=> res.json())
+    .then(response => {
+      this.setState(prevState => ({ ...prevState, response}));
     })
   }
 
@@ -27,11 +28,12 @@ export default class Container extends Component {
 
   render() {
     const {url, method, requestBody, response, historyItems} = this.state;
-    
+
     return (
       <main className={ styles.Container }>
         <History />
-        <Deck />
+        <Deck onSubmit={this.handleSubmit} onChange={this.handleChange} url={this.state.url}/>
+       
       </main>
     );
   }

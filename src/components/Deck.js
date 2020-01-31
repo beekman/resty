@@ -1,43 +1,41 @@
 import React, { Component } from 'react';
 import styles from './App.css';
-export default class Deck extends Component {
+const Deck = ({ onSubmit, onChange, url }) => {
+  return (
+    <section className={ styles.Deck }>
+      <form onSubmit={ onSubmit }>
+        <fieldset>
+          <input type="text" className="wide" name="url" placeholder="URL" value={ url } onChange={ onChange } />
+          <div id="methods">
+            <label>
+              <input type="radio" name="method" value="get" onChange={ onChange } />
+              <span>GET</span>
+            </label>
+            <label>
+              <input type="radio" name="method" value="post" onChange={ onChange } /><span>POST</span>
+            </label>
+            <label>
+              <input type="radio" name="method" value="put" onChange={ onChange } /><span>PUT</span>
+            </label>
+            <label><input type="radio" name="method" value="patch" onChange={ onChange } /><span>PATCH</span>
+            </label>
+            <label><input type="radio" name="method" value="delete" onChange={ onChange } /><span>DELETE</span>
+            </label>
+            <label>
+              <button>Go!</button>
+            </label>
+          </div>
+        </fieldset>
+        <section className="deck col-2">
+          <div id="body">
+            <textarea placeholder="Raw JSON Body" name="requestBody" disabled=""></textarea>
+          </div>
 
-
-  render() {
-    return (
-      <section className={ Deck.styles }>
-        <form>
-          <fieldset>
-            <input type="text" className="wide" name="url" placeholder="URL" value="" />
-            <div id="methods">
-              <label>
-                <input type="radio" name="method" value="get" />
-                <span>GET</span>
-              </label>
-              <label>
-                <input type="radio" name="method" value="post" /><span>POST</span>
-              </label>
-              <label>
-                <input type="radio" name="method" value="put" /><span>PUT</span>
-              </label>
-              <label><input type="radio" name="method" value="patch" /><span>PATCH</span>
-              </label>
-              <label><input type="radio" name="method" value="delete" /><span>DELETE</span>
-              </label>
-              <label>
-                <button type="submit">Go!</button>
-              </label>
-            </div>
-          </fieldset>
-          <section className="deck col-2">
-            <div id="body">
-              <textarea placeholder="Raw JSON Body" name="requestBody" disabled=""></textarea>
-            </div>
-            
         </section>
       </form>
     </section>
-    
-    );
-  }
-}
+
+  );
+};
+
+export default Deck;
