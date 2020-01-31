@@ -27,9 +27,7 @@ const Deck = ({ onSubmit, onChange, url }) => {
           </label>
         </div>
         <section className="deck col-2">
-          <div id="body">
-            <textarea placeholder="Raw JSON Body" name="requestBody" disabled=""></textarea>
-          </div>
+          <textarea placeholder="Raw JSON Body" name="requestBody"></textarea>
         </section>
       </form>
     </section>
@@ -37,8 +35,8 @@ const Deck = ({ onSubmit, onChange, url }) => {
 };
 
 Deck.propTypes = {
-  onSubmit: PropTypes.string.isRequired,
-  onChange: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
   url: PropTypes.string.isRequired
 };
 

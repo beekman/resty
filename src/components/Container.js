@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styles from './App.css';
 import Deck from './Deck.js';
-import History from './History.js';
-
+import History from './History/History';
+import Response from './Response/Response';
 export default class Container extends Component {
   state = {
     url: '',
@@ -41,8 +41,9 @@ export default class Container extends Component {
 
     return (
       <main className={ styles.Container }>
-        <History history={historyItems}/>
+        <History history={ historyItems } />
         <Deck onSubmit={ this.handleSubmit } onChange={ this.handleChange } url={ this.state.url } />
+        <Response response={ this.state.response } />
       </main>
     );
   }
