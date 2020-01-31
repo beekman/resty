@@ -4,11 +4,9 @@ import styles from './HistoryItem.css';
 
 const HistoryItem = ({ item }) => {
   return (
-    <section className={ styles.HistoryItem }>
-      <p>
-        { item.url }
-      </p>
-    </section>
+    <span className={ styles.HistoryItem }>
+      { item.url }
+    </span>
   );
 };
 

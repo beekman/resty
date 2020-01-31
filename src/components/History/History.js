@@ -13,7 +13,7 @@ const History = ({ history }) => {
 
   return (
     <aside className={ styles.History } >
-      <h2>History</h2>
+      <h3>History</h3>
       <ul>
         { HistoryItems }
       </ul>
