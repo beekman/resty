@@ -14,6 +14,16 @@ export default class Container extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    this.setState(prevState => ({
+      ...prevState,
+      historyItems: [
+        ...prevState.historyItems,
+        {
+          url: this.state.url,
+          method: this.state.method
+        }
+      ]
+    }));
 
     return fetch(this.state.url)
       .then(res => res.json())
@@ -31,7 +41,7 @@ export default class Container extends Component {
 
     return (
       <main className={ styles.Container }>
-        <History />
+        <History history={historyItems}/>
         <Deck onSubmit={ this.handleSubmit } onChange={ this.handleChange } url={ this.state.url } />
       </main>
     );
