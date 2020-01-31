@@ -1,4 +1,4 @@
-.Header{
+.Header {
   padding: 1rem;
   margin: 0 auto;
   font-size: 1.5rem;
@@ -7,7 +7,11 @@
 	align-items: center;
 }
 
-.Footer{
+.Container {
+padding: 0 0.5rem;
+}
+
+.Footer {
   padding: 1rem;
   margin: 0 auto;
   display: flex;

@@ -43,9 +43,10 @@ export default class Deck extends Component {
                 <input type="text" className="wide" name="authtoken" placeholder="Bearer Token" value="" />
               </div>
             </div>
-          </section>
-        </form>
-      </section>
+        </section>
+      </form>
+    </section>
+      
     );
   }
 }
