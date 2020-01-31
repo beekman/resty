@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './App.css';
+
 const Deck = ({ onSubmit, onChange, url }) => {
   return (
     <section className={ styles.Deck }>
@@ -34,8 +36,13 @@ const Deck = ({ onSubmit, onChange, url }) => {
         </section>
       </form>
     </section>
-
   );
+};
+
+Deck.propTypes = {
+  onSubmit: PropTypes.string.isRequired,
+  onChange: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
 };
 
 export default Deck;
