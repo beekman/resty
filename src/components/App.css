@@ -2,6 +2,50 @@ body{
   margin: 0;
 }
 
+#json {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  flex-basis: 0;
+  overflow: auto;
+  padding: 1em;
+}
+
+.col-2 {
+  display: flex;
+  width: 49%;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+label {
+  margin-right: .2rem;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+
+button {
+  font-size: 1.1rem;
+  border: 2px solid RGB(34,65,95);
+  margin: 5px 0;
+}
+
+input[type=radio]:checked+span{
+  background: #2d5986;
+  color: #eee;
+  padding: 2px 5px;
+}
+
+.visible-false{
+  display: none;
+  visibility: hidden;
+}
+
+input.wide{
+  width: 100% !important;
+}
+
 textarea{
   width: 100%;
   height: 10em;
@@ -17,104 +61,53 @@ textarea{
   overflow: hidden;
 }
 
-.Container {
-  aside{
-    grid-column: 1;
-    grid-row: 2;
-
-    textarea{
-      width: 100%;
-      height: 10em;
-      border: 0;
-      resize: none;
-    }
-  }
+main{
+  display:flex;
+  align-items: stretch;
 }
 
 
-.col-2 {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-input.wide {
-  width: 100%;
-}
 @media only screen and (min-width:650px){
   .Header {
     height: 4rem;
     line-height: 4em;
     padding: 0 2rem;
     overflow: hidden;
-    h1{
+    h1 {
       margin:0;
       font-size: 2rem;
     }
   }
-  .Container {
-    padding: 0 0.5rem;
-    display: grid;
-    grid-template-columns: 2fr 5fr;
-
-    input[type=radio] {
-      display: none;
-    }
-
-    label {
-      margin-right: .2rem;
-      cursor: pointer;
-    }
-
-    .wide{
-      width: 100%;
-    }
-
-    input[type=radio]:checked+span{
-      background: #2d5986;
-      color: #eee;
-    }
-
-
-
-    .col-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .visible-false{
-      display: none;
-      visibility: hidden;
-    }
-
-
+  main {
     .History {
+      width: 30%;
 
-    }
-    aside {
-      grid-column: 1;
-      grid-row: 1;
-    }
+      textarea{
+        width: 100%;
+        height: 10em;
+        border: 0;
+        resize: none;
+      }
 
-    .Deck {
-      padding: 0 1rem;
-      grid-column: 2;
-      grid-row: 1;
-
-      #json {
-        background: #f5f5f5;
-        border: 1px solid #ccc;
-        flex: 1 1;
-        flex-basis: 0;
-        overflow: auto;
-        padding: 1em;
+      ul {
+        list-style-type: none;
+        padding: 0;
       }
     }
   }
+
+  .Deck {
+    padding: 0;
+    width: 69%;
+  }
+
+
 
   .Footer {
     padding: 1rem;
     margin: 0 auto;
     display: flex;
     align-items: center;
+    width: 100%;
   }
 }

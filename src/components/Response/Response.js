@@ -5,9 +5,9 @@ import ReactJson from 'react-json-view';
 
 const Response = ({ response }) => {
   return (
-    <section>
+    <div id='json' className={styles.Response}>
       <ReactJson src={ response } enableClipboard={false}/>
-    </section>
+    </div>
   );
 };
 

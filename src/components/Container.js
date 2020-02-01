@@ -40,11 +40,13 @@ export default class Container extends Component {
     const { url, method, requestBody, response, historyItems } = this.state;
 
     return (
-      <main className={ styles.Container }>
-        <History history={ historyItems } />
-        <Deck onSubmit={ this.handleSubmit } onChange={ this.handleChange } url={ this.state.url } />
+      <>
+        <main className={ styles.Container }>
+          <History history={ historyItems } className={styles.History} />
+          <Deck onSubmit={ this.handleSubmit } onChange={ this.handleChange } url={ this.state.url } />
+        </main>
         <Response response={ this.state.response } />
-      </main>
+      </>
     );
   }
 }
