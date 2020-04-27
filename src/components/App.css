@@ -1,0 +1,113 @@
+body{
+  margin: 0;
+}
+
+#json {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  flex-basis: 0;
+  overflow: auto;
+  padding: 1em;
+}
+
+.col-2 {
+  display: flex;
+  width: 49%;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+label {
+  margin-right: .2rem;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+
+button {
+  font-size: 1.1rem;
+  border: 2px solid RGB(34,65,95);
+  margin: 5px 0;
+}
+
+input[type=radio]:checked+span{
+  background: #2d5986;
+  color: #eee;
+  padding: 2px 5px;
+}
+
+.visible-false{
+  display: none;
+  visibility: hidden;
+}
+
+input.wide{
+  width: 100% !important;
+}
+
+textarea{
+  width: 100%;
+  height: 10em;
+  resize: none;
+}
+
+.Header {
+  margin: 0 auto;
+  background: #204060;
+  color: #f5f5f5;
+  height: 4rem;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+main{
+  display:flex;
+  align-items: stretch;
+}
+
+
+@media only screen and (min-width:650px){
+  .Header {
+    height: 4rem;
+    line-height: 4em;
+    padding: 0 2rem;
+    overflow: hidden;
+    h1 {
+      margin:0;
+      font-size: 2rem;
+    }
+  }
+  main {
+    .History {
+      width: 30%;
+
+      textarea{
+        width: 100%;
+        height: 10em;
+        border: 0;
+        resize: none;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+    }
+  }
+
+  .Deck {
+    padding: 0;
+    width: 69%;
+  }
+
+
+
+  .Footer {
+    padding: 1rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
